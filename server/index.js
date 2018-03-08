@@ -1,9 +1,15 @@
 const express = require("express");
 const cors = require("cors");
+const { json } = require("body-parser");
+
+// Import controllers
+const { getGenres, getRecommendations } = require("./controllers/controller");
 
 const app = express();
-
+app.use(json());
 app.use(cors());
+
+app.get("/api/genres", getGenres);
 
 const port = 3001;
 
