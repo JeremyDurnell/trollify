@@ -45,7 +45,7 @@ const getRecommendations = (req, res) => {
         req.params.genre
       }&target_popularity=${req.params.popularity}`
     )
-    .then(recommendations => res.statuse(200).json(recommendations.data))
+    .then(recommendations => res.status(200).json(recommendations.data))
     .catch(err => {
       res.status(500).json("Could not get recommendations from Spotify Api");
       console.log(err);

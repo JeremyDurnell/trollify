@@ -10,6 +10,7 @@ app.use(json());
 app.use(cors());
 
 app.get("/api/genres", getGenres);
+app.get("/api/recommendations/:genre/:popularity", getRecommendations);
 
 const port = 3001;
 
