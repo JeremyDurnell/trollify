@@ -24,7 +24,6 @@ axios(authOptions)
     // Add the access token as a default header for all requests
     axios.defaults.headers.common["Authorization"] =
       "Bearer " + res.data.access_token;
-    // axios.defaults.headers.common["Content-Type"] = "application/json";
   })
   .catch(console.log);
 
