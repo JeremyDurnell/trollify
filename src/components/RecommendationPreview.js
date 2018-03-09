@@ -11,6 +11,13 @@ const PreviewContainer = styled("div")`
   overflow-y: scroll;
 `;
 
+const Greeting = styled("h3")`
+  font-weight: bold;
+  font-size: 5em;
+  margin: 15% 0;
+  text-align: center;
+`;
+
 export default class RecommendationPreview extends Component {
   constructor(props) {
     super(props);
@@ -60,17 +67,20 @@ export default class RecommendationPreview extends Component {
     const { recommendations } = this.props;
 
     const recommendationsList =
-      recommendations.length > 1 &&
-      recommendations.map((recommendation, index) => (
-        <Recommendation
-          recommendation={recommendation}
-          key={recommendation.id}
-          index={index}
-          handleSelect={this.handleSelect}
-          playing={this.state.activeMusicIndex === index && this.state.play}
-          previewAvailable={recommendation.preview_url}
-        />
-      ));
+      recommendations.length > 1 ? (
+        recommendations.map((recommendation, index) => (
+          <Recommendation
+            recommendation={recommendation}
+            key={recommendation.id}
+            index={index}
+            handleSelect={this.handleSelect}
+            playing={this.state.activeMusicIndex === index && this.state.play}
+            previewAvailable={recommendation.preview_url}
+          />
+        ))
+      ) : (
+        <Greeting>Hi :)</Greeting>
+      );
 
     const activeMusic =
       recommendations.length > 1 &&
@@ -87,7 +97,7 @@ export default class RecommendationPreview extends Component {
           }}
           src={activeMusic.preview_url}
         />
-        {this.props.loading ? "loading" : recommendationsList}
+        {this.props.loading ? <Greeting /> : recommendationsList}
       </PreviewContainer>
     );
   }
