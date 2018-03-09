@@ -28,6 +28,10 @@ const SubHeader = styled("h2")`
   font-size: 2em;
   margin: 1% 0;
   text-align: center;
+
+  @media (max-width: 900px) {
+    font-size: 1.5em;
+  }
 `;
 
 const InputsContainer = styled("div")`
@@ -35,6 +39,14 @@ const InputsContainer = styled("div")`
   justify-content: space-around;
   align-items: center;
   width: 80%;
+
+  @media (max-width: 500px) {
+    flex-direction: column;
+  }
+`;
+
+const Disclaimer = styled("span")`
+  font-size: 0.75em;
 `;
 
 class App extends Component {
@@ -131,6 +143,7 @@ class App extends Component {
           loading={this.state.loading}
           recommendations={this.state.recommendations}
         />
+        <Disclaimer>*Some genres have a popularity cap*</Disclaimer>
       </LandingContainer>
     );
   }

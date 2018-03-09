@@ -8,6 +8,10 @@ const RecommendationContainer = styled("div")`
   height: auto;
   width: 100%;
   border-bottom: 3px solid #181818;
+
+  @media (max-width: 576px) {
+    font-size: 0.75em;
+  }
 `;
 
 const AlbumArt = styled("img")`
@@ -18,14 +22,18 @@ const AlbumArt = styled("img")`
 `;
 
 const SongInfo = styled("div")`
-  text-align: center;
+  text-align: left;
   width: 60%;
   height: 100%;
-  margin-left: 5px;
+  margin-left: 10px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   font-size: 1.25em;
+
+  @media (max-width: 871px) {
+    font-size: 0.75em;
+  }
 `;
 
 const TrackData = styled("span")`
@@ -38,18 +46,15 @@ const PlayButtonContainer = styled("div")`
   display: flex;
   justify-content: center;
   align-items: center;
+  text-align: center;
 `;
 
 const SpotifyLink = styled("a")`
   font-weight: bold;
   text-decoration: none;
   color: #1db954;
-  s
-
-  &:hover: {
-    opacity: 0.5;
-  }
 `;
+
 const Recommendation = ({
   recommendation,
   index,
@@ -78,9 +83,14 @@ const Recommendation = ({
         <TrackData>Popularity: </TrackData>
         {recommendation.popularity}
       </p>
-      <SpotifyLink href={recommendation.external_urls.spotify} target="_blank">
-        Open in Spotify
-      </SpotifyLink>
+      <p>
+        <SpotifyLink
+          href={recommendation.external_urls.spotify}
+          target="_blank"
+        >
+          Open in Spotify
+        </SpotifyLink>
+      </p>
     </SongInfo>
     <PlayButtonContainer onClick={e => handleSelect(index, e)}>
       {previewAvailable !== null ? (

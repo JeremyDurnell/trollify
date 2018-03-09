@@ -6,7 +6,7 @@ import Recommendation from "./Recommendation";
 const PreviewContainer = styled("div")`
   height: 60vh;
   width: 75%;
-  margin: 5vh 5%;
+  margin: 2vh 5%;
   background-color: black;
   overflow-y: scroll;
 `;
