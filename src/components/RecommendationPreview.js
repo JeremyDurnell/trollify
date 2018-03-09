@@ -47,33 +47,47 @@ export default class RecommendationPreview extends Component {
     this.state.play ? this.audioContainer.pause() : this.audioContainer.play();
     this.setState({ play: !this.state.play });
   }
+
+  componentWillReceiveProps(nextProps) {
+    this.audioContainer.pause();
+    this.setState({ activeMusicIndex: 0, play: false }),
+      () => {
+        this.audioContainer.currentTime = 0;
+      };
+  }
+
   render() {
-    console.log(this.props);
-    const recommendations =
-      this.props.recommendations.length > 1 &&
-      this.props.recommendations.map((recommendation, index) => (
+    const { recommendations } = this.props;
+
+    const recommendationsList =
+      recommendations.length > 1 &&
+      recommendations.map((recommendation, index) => (
         <Recommendation
           recommendation={recommendation}
           key={recommendation.name}
           index={index}
           handleSelect={this.handleSelect}
           playing={this.state.activeMusicIndex === index && this.state.play}
+          previewAvailable={recommendation.preview_url}
         />
       ));
+
     const activeMusic =
-      this.props.recommendations.length > 1 &&
-      this.props.recommendations[this.state.activeMusicIndex];
+      recommendations.length > 1 &&
+      recommendations[this.state.activeMusicIndex];
+
+    console.log(activeMusic);
+
     return (
       <PreviewContainer>
         <audio
-          autoPlay={this.state.play}
           preload="none"
           ref={ref => {
             this.audioContainer = ref;
           }}
           src={activeMusic.preview_url}
         />
-        {recommendations}
+        {recommendationsList}
       </PreviewContainer>
     );
   }

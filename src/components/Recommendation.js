@@ -14,6 +14,7 @@ const AlbumArt = styled("img")`
   height: auto;
   width: 25%;
   border-radius: 50%;
+  padding: 5px;
 `;
 
 const SongInfo = styled("div")`
@@ -43,13 +44,19 @@ const SpotifyLink = styled("a")`
   font-weight: bold;
   text-decoration: none;
   color: #1db954;
-  margin-top: 0.5em;
+  s
 
   &:hover: {
     opacity: 0.5;
   }
 `;
-const Recommendation = ({ recommendation, index, handleSelect, playing }) => (
+const Recommendation = ({
+  recommendation,
+  index,
+  handleSelect,
+  playing,
+  previewAvailable
+}) => (
   <RecommendationContainer>
     <AlbumArt
       src={
@@ -76,10 +83,14 @@ const Recommendation = ({ recommendation, index, handleSelect, playing }) => (
       </SpotifyLink>
     </SongInfo>
     <PlayButtonContainer onClick={e => handleSelect(index, e)}>
-      <i
-        className={playing ? "icon fa fa-pause" : "icon fa fa-play"}
-        style={{ fontSize: "3em", cursor: "pointer", color: "#1db954" }}
-      />
+      {previewAvailable !== null ? (
+        <i
+          className={playing ? "icon fa fa-pause" : "icon fa fa-play"}
+          style={{ fontSize: "3em", cursor: "pointer", color: "#1db954" }}
+        />
+      ) : (
+        "No preview available"
+      )}
     </PlayButtonContainer>
   </RecommendationContainer>
 );
