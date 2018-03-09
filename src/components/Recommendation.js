@@ -7,6 +7,7 @@ const RecommendationContainer = styled("div")`
   align-items: center;
   height: auto;
   width: 100%;
+  border-bottom: 3px solid #181818;
 `;
 
 const AlbumArt = styled("img")`
@@ -23,11 +24,30 @@ const SongInfo = styled("div")`
   flex-direction: column;
   justify-content: space-between;
 `;
-const Recommendation = ({ recommendation }) => (
+
+const TrackData = styled("span")`
+  font-weight: bold;
+  margin-right: 1em;
+`;
+
+const PlayButtonContainer = styled("div")`
+  width: 14%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
+const SpotifyLink = styled("a")`
+  font-weight: bold;
+  text-decoration: none;
+  color: #1db954;
+  margin-top: 2em;
+`;
+const Recommendation = ({ recommendation, index, handleSelect, playing }) => (
   <RecommendationContainer>
     <AlbumArt
       src={
-        recommendation.album.images[0].url
+        recommendation.album.images[0]
           ? recommendation.album.images[0].url
           : "https://avatars1.githubusercontent.com/u/29843005?s=400&u=0fec472ecd3c19b61d7a9233b611e268e7cf8c98&v=4"
       }
@@ -35,22 +55,26 @@ const Recommendation = ({ recommendation }) => (
     />
     <SongInfo>
       <p>
-        <span>TRACK: </span>
+        <TrackData>Title: </TrackData>
         {recommendation.name}
       </p>
       <p>
-        <span>ARTIST:</span> {recommendation.artists[0].name}
+        <TrackData>Artist:</TrackData> {recommendation.artists[0].name}
       </p>
       <p>
-        <span>POPULARITY: </span>
+        <TrackData>Popularity: </TrackData>
         {recommendation.popularity}
       </p>
-    </SongInfo>
-    <div>
-      <a href={recommendation.external_urls.spotify} target="_blank">
+      <SpotifyLink href={recommendation.external_urls.spotify} target="_blank">
         Open in Spotify
-      </a>
-    </div>
+      </SpotifyLink>
+    </SongInfo>
+    <PlayButtonContainer onClick={e => handleSelect(index, e)}>
+      <i
+        className={playing ? "icon fa fa-pause" : "icon fa fa-play"}
+        style={{ fontSize: "3em" }}
+      />
+    </PlayButtonContainer>
   </RecommendationContainer>
 );
 
