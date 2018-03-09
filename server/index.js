@@ -6,9 +6,15 @@ const { json } = require("body-parser");
 const { getGenres, getRecommendations } = require("./controllers/controller");
 
 const app = express();
+
+// SERVE FRONTEND
+app.use(express.static(`${__dirname}/../build/`));
+
+// Attach Middlewares
 app.use(json());
 app.use(cors());
 
+// API Endpoints
 app.get("/api/genres", getGenres);
 app.get("/api/recommendations/:genre/:popularity", getRecommendations);
 
