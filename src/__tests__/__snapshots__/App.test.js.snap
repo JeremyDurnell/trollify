@@ -1,0 +1,70 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<div
+  className="css-1g6kzc4"
+>
+  <h1
+    className="css-9dmjok"
+  >
+    Trollify
+  </h1>
+  <h2
+    className="css-1okmgpj"
+  >
+    Find ridiculous songs to add to your company's Spotify playlist
+  </h2>
+  <div
+    className="css-190tcdo"
+  >
+    <div>
+      <p>
+        Step 1: Select a genre
+      </p>
+      <select
+        onChange={[Function]}
+        value="acoustic"
+      >
+        <option>
+          loading
+        </option>
+      </select>
+    </div>
+    <div
+      style={
+        Object {
+          "textAlign": "center",
+        }
+      }
+    >
+      <p>
+        Step 2: Select the popularity
+      </p>
+      <input
+        max={99}
+        min={1}
+        onChange={[Function]}
+        step={1}
+        type="range"
+        value={50}
+      />
+      <span>
+        50
+      </span>
+    </div>
+  </div>
+  <div
+    className="css-1jreqdg"
+  >
+    <audio
+      preload="none"
+      src={undefined}
+    />
+  </div>
+  <span
+    className="css-4cu7q6"
+  >
+    *Some genres have a popularity cap*
+  </span>
+</div>
+`;

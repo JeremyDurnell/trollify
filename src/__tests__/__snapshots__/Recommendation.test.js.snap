@@ -1,0 +1,252 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<div
+  className="css-q5a3uo"
+>
+  <img
+    alt="album cover"
+    className="css-ovo32k"
+    src={undefined}
+  />
+  <div
+    className="css-luo11w"
+  >
+    <p>
+      <span
+        className="css-ypobiv"
+      >
+        Title: 
+      </span>
+      testName
+    </p>
+    <p>
+      <span
+        className="css-ypobiv"
+      >
+        Artist:
+      </span>
+       
+      artist
+    </p>
+    <p>
+      <span
+        className="css-ypobiv"
+      >
+        Popularity: 
+      </span>
+      50
+    </p>
+    <p>
+      <a
+        className="css-e3j2k9"
+        href="testurlhere"
+        target="_blank"
+      >
+        Open in Spotify
+      </a>
+    </p>
+  </div>
+  <div
+    className="css-11nq8jn"
+    onClick={[Function]}
+  >
+    <i
+      className="icon fa fa-play"
+      style={
+        Object {
+          "color": "#1db954",
+          "cursor": "pointer",
+          "fontSize": "3em",
+        }
+      }
+    />
+  </div>
+</div>
+`;
+
+exports[`renders correctly 2`] = `
+<div
+  className="css-q5a3uo"
+>
+  <img
+    alt="album cover"
+    className="css-ovo32k"
+    src={undefined}
+  />
+  <div
+    className="css-luo11w"
+  >
+    <p>
+      <span
+        className="css-ypobiv"
+      >
+        Title: 
+      </span>
+      testName
+    </p>
+    <p>
+      <span
+        className="css-ypobiv"
+      >
+        Artist:
+      </span>
+       
+      artist
+    </p>
+    <p>
+      <span
+        className="css-ypobiv"
+      >
+        Popularity: 
+      </span>
+      50
+    </p>
+    <p>
+      <a
+        className="css-e3j2k9"
+        href="testurlhere"
+        target="_blank"
+      >
+        Open in Spotify
+      </a>
+    </p>
+  </div>
+  <div
+    className="css-11nq8jn"
+    onClick={[Function]}
+  >
+    No preview available
+  </div>
+</div>
+`;
+
+exports[`renders correctly 3`] = `
+<div
+  className="css-q5a3uo"
+>
+  <img
+    alt="album cover"
+    className="css-ovo32k"
+    src={undefined}
+  />
+  <div
+    className="css-luo11w"
+  >
+    <p>
+      <span
+        className="css-ypobiv"
+      >
+        Title: 
+      </span>
+      testName
+    </p>
+    <p>
+      <span
+        className="css-ypobiv"
+      >
+        Artist:
+      </span>
+       
+      artist
+    </p>
+    <p>
+      <span
+        className="css-ypobiv"
+      >
+        Popularity: 
+      </span>
+      50
+    </p>
+    <p>
+      <a
+        className="css-e3j2k9"
+        href="testurlhere"
+        target="_blank"
+      >
+        Open in Spotify
+      </a>
+    </p>
+  </div>
+  <div
+    className="css-11nq8jn"
+    onClick={[Function]}
+  >
+    <i
+      className="icon fa fa-pause"
+      style={
+        Object {
+          "color": "#1db954",
+          "cursor": "pointer",
+          "fontSize": "3em",
+        }
+      }
+    />
+  </div>
+</div>
+`;
+
+exports[`renders correctly 4`] = `
+<div
+  className="css-q5a3uo"
+>
+  <img
+    alt="album cover"
+    className="css-ovo32k"
+    src={undefined}
+  />
+  <div
+    className="css-luo11w"
+  >
+    <p>
+      <span
+        className="css-ypobiv"
+      >
+        Title: 
+      </span>
+      testName
+    </p>
+    <p>
+      <span
+        className="css-ypobiv"
+      >
+        Artist:
+      </span>
+       
+      artist
+    </p>
+    <p>
+      <span
+        className="css-ypobiv"
+      >
+        Popularity: 
+      </span>
+      50
+    </p>
+    <p>
+      <a
+        className="css-e3j2k9"
+        href="testurlhere"
+        target="_blank"
+      >
+        Open in Spotify
+      </a>
+    </p>
+  </div>
+  <div
+    className="css-11nq8jn"
+    onClick={[Function]}
+  >
+    <i
+      className="icon fa fa-play"
+      style={
+        Object {
+          "color": "#1db954",
+          "cursor": "pointer",
+          "fontSize": "3em",
+        }
+      }
+    />
+  </div>
+</div>
+`;
