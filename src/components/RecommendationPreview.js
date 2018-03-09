@@ -64,7 +64,7 @@ export default class RecommendationPreview extends Component {
       recommendations.map((recommendation, index) => (
         <Recommendation
           recommendation={recommendation}
-          key={recommendation.name}
+          key={recommendation.id}
           index={index}
           handleSelect={this.handleSelect}
           playing={this.state.activeMusicIndex === index && this.state.play}
@@ -87,7 +87,7 @@ export default class RecommendationPreview extends Component {
           }}
           src={activeMusic.preview_url}
         />
-        {recommendationsList}
+        {this.props.loading ? "loading" : recommendationsList}
       </PreviewContainer>
     );
   }

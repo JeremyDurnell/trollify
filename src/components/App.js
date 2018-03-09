@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import styled from "react-emotion";
 import axios from "axios";
+import { debounce } from "lodash";
 
 import RecommendationPreview from "./RecommendationPreview";
 
@@ -48,6 +49,7 @@ class App extends Component {
     };
     this.handleChange = this.handleChange.bind(this);
     this.getRecommendations = this.getRecommendations.bind(this);
+    this.debouncedGetRecs = debounce(this.getRecommendations, 1000);
   }
 
   componentDidMount() {
@@ -59,21 +61,30 @@ class App extends Component {
 
   handleChange(event, source) {
     if (source === "genre") {
-      this.setState({ selectedGenre: event.target.value });
+      this.setState({ selectedGenre: event.target.value }, () =>
+        this.getRecommendations()
+      );
     } else if (source === "popularity") {
-      this.setState({ popularityValue: event.target.value });
+      this.setState(
+        { popularityValue: event.target.value },
+        this.debouncedGetRecs()
+      );
     }
   }
 
   getRecommendations() {
     const { selectedGenre, popularityValue } = this.state;
-
-    axios
-      .get(`/api/recommendations/${selectedGenre}/${popularityValue}`)
-      .then(recommendations => {
-        this.setState({ recommendations: recommendations.data.tracks });
-      })
-      .catch(console.log);
+    this.setState({ loading: true }, () => {
+      axios
+        .get(`/api/recommendations/${selectedGenre}/${popularityValue}`)
+        .then(recommendations => {
+          this.setState({
+            recommendations: recommendations.data.tracks,
+            loading: false
+          });
+        })
+        .catch(console.log);
+    });
   }
 
   render() {
@@ -115,15 +126,11 @@ class App extends Component {
             />
             <span>{this.state.popularityValue}</span>
           </div>
-          <div>
-            <p>Step 3:</p>
-            <button onClick={this.getRecommendations}>
-              {" "}
-              Get Recommendations!
-            </button>
-          </div>
         </InputsContainer>
-        <RecommendationPreview recommendations={this.state.recommendations} />
+        <RecommendationPreview
+          loading={this.state.loading}
+          recommendations={this.state.recommendations}
+        />
       </LandingContainer>
     );
   }
