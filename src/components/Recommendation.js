@@ -13,16 +13,18 @@ const RecommendationContainer = styled("div")`
 const AlbumArt = styled("img")`
   height: auto;
   width: 25%;
+  border-radius: 50%;
 `;
 
 const SongInfo = styled("div")`
-  text-align: left;
+  text-align: center;
   width: 60%;
   height: 100%;
   margin-left: 5px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  font-size: 1.25em;
 `;
 
 const TrackData = styled("span")`
@@ -41,7 +43,11 @@ const SpotifyLink = styled("a")`
   font-weight: bold;
   text-decoration: none;
   color: #1db954;
-  margin-top: 2em;
+  margin-top: 0.5em;
+
+  &:hover: {
+    opacity: 0.5;
+  }
 `;
 const Recommendation = ({ recommendation, index, handleSelect, playing }) => (
   <RecommendationContainer>
@@ -72,7 +78,7 @@ const Recommendation = ({ recommendation, index, handleSelect, playing }) => (
     <PlayButtonContainer onClick={e => handleSelect(index, e)}>
       <i
         className={playing ? "icon fa fa-pause" : "icon fa fa-play"}
-        style={{ fontSize: "3em" }}
+        style={{ fontSize: "3em", cursor: "pointer", color: "#1db954" }}
       />
     </PlayButtonContainer>
   </RecommendationContainer>

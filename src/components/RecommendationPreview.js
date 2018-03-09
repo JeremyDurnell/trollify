@@ -24,6 +24,7 @@ export default class RecommendationPreview extends Component {
 
   handleSelect(index, event) {
     event.stopPropagation();
+
     this.state.activeMusicIndex === index
       ? this.handleToggle()
       : this._playMusic(index);
