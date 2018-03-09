@@ -1,0 +1,98 @@
+{
+	"info": {
+		"name": "Trollify",
+		"_postman_id": "0b54e176-9d15-b7f8-e77c-bc8b7db7acb2",
+		"description": "Simple endpoint tests for Trollify application",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Fetches Genres Appropriately",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "b5e6c732-df85-4d1a-be5c-ce95ca2d3bba",
+						"type": "text/javascript",
+						"exec": [
+							"let res = pm.response.json().genres",
+							"",
+							"pm.test('Returns an array of genres that is not empty', function() {",
+							"    let isArray = res.length > 0",
+							"    pm.expect(isArray).to.eql(true);",
+							"})",
+							"",
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:3001/api/genres",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"genres"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Fetches Recommendations Appropriately",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "23101b24-1d96-4166-8d6e-13220b132ae9",
+						"type": "text/javascript",
+						"exec": [
+							"let res = pm.response.json().tracks",
+							"",
+							"pm.test('Returns an array of tracks that is not empty', function() {",
+							"    let isArray = res.length > 0",
+							"    pm.expect(isArray).to.eql(true);",
+							"})",
+							"",
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:3001/api/recommendations/acoustic/50",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"recommendations",
+						"acoustic",
+						"50"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}
