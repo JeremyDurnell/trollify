@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import styled from "react-emotion";
 import axios from "axios";
 import { debounce } from "lodash";
 
@@ -12,7 +11,9 @@ import {
   Header,
   SubHeader,
   InputsContainer,
-  Disclaimer
+  Disclaimer,
+  DropDown,
+  SliderInput
 } from "../styles";
 
 class App extends Component {
@@ -85,16 +86,16 @@ class App extends Component {
         <InputsContainer>
           <div>
             <p>Step 1: Select a genre</p>
-            <select
+            <DropDown
               onChange={e => this.handleChange(e, "genre")}
               value={this.state.selectedGenre}
             >
               {genreOptions}
-            </select>
+            </DropDown>
           </div>
           <div style={{ textAlign: "center" }}>
             <p>Step 2: Select the popularity</p>
-            <input
+            <SliderInput
               type="range"
               min={1}
               max={99}

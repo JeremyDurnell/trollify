@@ -1,12 +1,10 @@
 import React, { Component } from "react";
-import styled from "react-emotion";
 
 // Import React Components
 import Recommendation from "./Recommendation";
 
 // Import Styled-Components
 import { PreviewContainer, Greeting } from "../styles";
-
 export default class RecommendationPreview extends Component {
   constructor(props) {
     super(props);

@@ -48,7 +48,7 @@ exports[`renders correctly 1`] = `
     </p>
   </div>
   <div
-    className="css-11nq8jn"
+    className="css-pm9axs"
     onClick={[Function]}
   >
     <i
@@ -113,7 +113,7 @@ exports[`renders correctly 2`] = `
     </p>
   </div>
   <div
-    className="css-11nq8jn"
+    className="css-pm9axs"
     onClick={[Function]}
   >
     No preview available
@@ -169,7 +169,7 @@ exports[`renders correctly 3`] = `
     </p>
   </div>
   <div
-    className="css-11nq8jn"
+    className="css-pm9axs"
     onClick={[Function]}
   >
     <i
@@ -234,7 +234,7 @@ exports[`renders correctly 4`] = `
     </p>
   </div>
   <div
-    className="css-11nq8jn"
+    className="css-pm9axs"
     onClick={[Function]}
   >
     <i

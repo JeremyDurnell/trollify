@@ -29,6 +29,10 @@ export const SubHeader = styled("h2")`
   @media (max-width: 900px) {
     font-size: 1.5em;
   }
+
+  @media (max-width: 425px) {
+    font-size: 1.25em;
+  }
 `;
 
 export const InputsContainer = styled("div")`
@@ -39,6 +43,105 @@ export const InputsContainer = styled("div")`
 
   @media (max-width: 500px) {
     flex-direction: column;
+  }
+`;
+
+export const DropDown = styled("select")`
+  @media (max-width: 500px) {
+    color: white;
+    background-color: grey;
+    border: none;
+  }
+`;
+
+export const SliderInput = styled("input")`
+  & {
+    -webkit-appearance: none;
+    width: 70%;
+    margin-right: 5px;
+  }
+  &:focus {
+    outline: none;
+  }
+  &::-webkit-slider-runnable-track {
+    width: 100%;
+    height: 3.4px;
+    cursor: pointer;
+    box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+    background: #ffffff;
+    border-radius: 3.6px;
+    border: 0.2px solid #010101;
+  }
+  &::-webkit-slider-thumb {
+    box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+    border: 0.9px solid #000000;
+    height: 17px;
+    width: 16px;
+    border-radius: 47px;
+    background: #ffffff;
+    cursor: pointer;
+    -webkit-appearance: none;
+    margin-top: -7px;
+  }
+  &:focus::-webkit-slider-runnable-track {
+    background: #ffffff;
+  }
+
+  &::-moz-range-track {
+    background: white;
+    margin: 0 0;
+  }
+
+  &::-moz-range-thumb {
+    box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+    border: 0.9px solid #000000;
+    height: 17px;
+    width: 16px;
+    border-radius: 47px;
+    background: #ffffff;
+    cursor: pointer;
+  }
+  &::-ms-track {
+    width: 100%;
+    height: 3.4px;
+    cursor: pointer;
+    background: transparent;
+    border-color: transparent;
+    color: transparent;
+  }
+  &::-ms-fill-lower {
+    background: #d9d9d9;
+    border: 0.2px solid #010101;
+    border-radius: 7.2px;
+    box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+  }
+  &::-ms-fill-upper {
+    background: #ffffff;
+    border: 0.2px solid #010101;
+    border-radius: 7.2px;
+    box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+  }
+  &::-ms-thumb {
+    box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+    border: 0.9px solid #000000;
+    height: 17px;
+    width: 16px;
+    border-radius: 47px;
+    background: #ffffff;
+    cursor: pointer;
+    height: 3.4px;
+  }
+  &:focus::-ms-fill-lower {
+    background: #ffffff;
+  }
+  &:focus::-ms-fill-upper {
+    background: #ffffff;
+  }
+
+  @media (max-width: 425px) {
+    input[type="range"] {
+      margin-bottom: 10px;
+    }
   }
 `;
 
@@ -64,7 +167,7 @@ export const Greeting = styled("h3")`
   text-align: center;
 `;
 
-// <---------------------------------------------------- Recommendation.js----------------------------
+// <------------------------------------- Recommendation.js----------------------------
 
 export const RecommendationContainer = styled("div")`
   display: flex;
@@ -112,6 +215,11 @@ export const PlayButtonContainer = styled("div")`
   justify-content: center;
   align-items: center;
   text-align: center;
+
+  @media (max-width: 425px) {
+    font-size: 0.75em;
+    padding-right: 5px;
+  }
 `;
 
 export const SpotifyLink = styled("a")`

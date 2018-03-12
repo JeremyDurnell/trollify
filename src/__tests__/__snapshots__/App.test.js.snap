@@ -10,7 +10,7 @@ exports[`renders correctly 1`] = `
     Trollify
   </h1>
   <h2
-    className="css-1okmgpj"
+    className="css-1ys0kik"
   >
     Find ridiculous songs to add to your company's Spotify playlist
   </h2>
@@ -22,6 +22,7 @@ exports[`renders correctly 1`] = `
         Step 1: Select a genre
       </p>
       <select
+        className="css-rbms69"
         onChange={[Function]}
         value="acoustic"
       >
@@ -41,6 +42,7 @@ exports[`renders correctly 1`] = `
         Step 2: Select the popularity
       </p>
       <input
+        className="css-q7300q"
         max={99}
         min={1}
         onChange={[Function]}
@@ -60,9 +62,14 @@ exports[`renders correctly 1`] = `
       preload="none"
       src={undefined}
     />
+    <h3
+      className="css-533csn"
+    >
+      Hi :)
+    </h3>
   </div>
   <span
-    className="css-4cu7q6"
+    className="css-1wvs00p"
   >
     *Some genres have a popularity cap*
   </span>
