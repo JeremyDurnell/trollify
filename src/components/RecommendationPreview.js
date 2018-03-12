@@ -50,27 +50,26 @@ export default class RecommendationPreview extends Component {
   }
 
   render() {
-    const { recommendations } = this.props;
+    const { recommendations, loading } = this.props;
+    const { activeMusicIndex, play } = this.state;
+    const greeting = <Greeting>Hi :)</Greeting>;
 
     const recommendationsList =
-      recommendations.length > 1 ? (
-        recommendations.map((recommendation, index) => (
-          <Recommendation
-            recommendation={recommendation}
-            key={recommendation.id}
-            index={index}
-            handleSelect={this.handleSelect}
-            playing={this.state.activeMusicIndex === index && this.state.play}
-            previewAvailable={recommendation.preview_url}
-          />
-        ))
-      ) : (
-        <Greeting>Hi :)</Greeting>
-      );
+      recommendations.length > 1
+        ? recommendations.map((recommendation, index) => (
+            <Recommendation
+              recommendation={recommendation}
+              key={recommendation.id}
+              index={index}
+              handleSelect={this.handleSelect}
+              playing={activeMusicIndex === index && play}
+              previewAvailable={recommendation.preview_url}
+            />
+          ))
+        : greeting;
 
     const activeMusic =
-      recommendations.length > 1 &&
-      recommendations[this.state.activeMusicIndex];
+      recommendations.length > 1 && recommendations[activeMusicIndex];
 
     return (
       <PreviewContainer>
@@ -81,7 +80,7 @@ export default class RecommendationPreview extends Component {
           }}
           src={activeMusic.preview_url}
         />
-        {this.props.loading ? <Greeting /> : recommendationsList}
+        {loading ? greeting : recommendationsList}
       </PreviewContainer>
     );
   }

@@ -39,7 +39,7 @@ exports[`renders correctly 1`] = `
     </p>
     <p>
       <a
-        className="css-e3j2k9"
+        className="css-11wmpwx"
         href="testurlhere"
         target="_blank"
       >
@@ -48,7 +48,7 @@ exports[`renders correctly 1`] = `
     </p>
   </div>
   <div
-    className="css-pm9axs"
+    className="css-3bbsbf"
     onClick={[Function]}
   >
     <i
@@ -104,7 +104,7 @@ exports[`renders correctly 2`] = `
     </p>
     <p>
       <a
-        className="css-e3j2k9"
+        className="css-11wmpwx"
         href="testurlhere"
         target="_blank"
       >
@@ -113,7 +113,7 @@ exports[`renders correctly 2`] = `
     </p>
   </div>
   <div
-    className="css-pm9axs"
+    className="css-3bbsbf"
     onClick={[Function]}
   >
     No preview available
@@ -160,7 +160,7 @@ exports[`renders correctly 3`] = `
     </p>
     <p>
       <a
-        className="css-e3j2k9"
+        className="css-11wmpwx"
         href="testurlhere"
         target="_blank"
       >
@@ -169,7 +169,7 @@ exports[`renders correctly 3`] = `
     </p>
   </div>
   <div
-    className="css-pm9axs"
+    className="css-3bbsbf"
     onClick={[Function]}
   >
     <i
@@ -225,7 +225,7 @@ exports[`renders correctly 4`] = `
     </p>
     <p>
       <a
-        className="css-e3j2k9"
+        className="css-11wmpwx"
         href="testurlhere"
         target="_blank"
       >
@@ -234,7 +234,7 @@ exports[`renders correctly 4`] = `
     </p>
   </div>
   <div
-    className="css-pm9axs"
+    className="css-3bbsbf"
     onClick={[Function]}
   >
     <i

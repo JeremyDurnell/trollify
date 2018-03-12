@@ -40,6 +40,7 @@ export const InputsContainer = styled("div")`
   justify-content: space-around;
   align-items: center;
   width: 80%;
+  text-align: center;
 
   @media (max-width: 500px) {
     flex-direction: column;
@@ -48,8 +49,8 @@ export const InputsContainer = styled("div")`
 
 export const DropDown = styled("select")`
   @media (max-width: 500px) {
-    color: white;
-    background-color: grey;
+    color: black;
+    background-color: white;
     border: none;
   }
 `;
@@ -216,6 +217,10 @@ export const PlayButtonContainer = styled("div")`
   align-items: center;
   text-align: center;
 
+  &:hover {
+    opacity: 0.7;
+  }
+
   @media (max-width: 425px) {
     font-size: 0.75em;
     padding-right: 5px;
@@ -226,4 +231,8 @@ export const SpotifyLink = styled("a")`
   font-weight: bold;
   text-decoration: none;
   color: #1db954;
+
+  &:hover {
+    opacity: 0.7;
+  }
 `;

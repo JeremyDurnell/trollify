@@ -15,14 +15,14 @@ exports[`renders correctly 1`] = `
     Find ridiculous songs to add to your company's Spotify playlist
   </h2>
   <div
-    className="css-190tcdo"
+    className="css-rfux3y"
   >
     <div>
       <p>
         Step 1: Select a genre
       </p>
       <select
-        className="css-rbms69"
+        className="css-1bl1n8v"
         onChange={[Function]}
         value="acoustic"
       >
@@ -31,13 +31,7 @@ exports[`renders correctly 1`] = `
         </option>
       </select>
     </div>
-    <div
-      style={
-        Object {
-          "textAlign": "center",
-        }
-      }
-    >
+    <div>
       <p>
         Step 2: Select the popularity
       </p>

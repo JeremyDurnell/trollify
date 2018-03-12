@@ -24,7 +24,8 @@ class App extends Component {
       popularityValue: 50,
       selectedGenre: "acoustic",
       recommendations: [],
-      genres: ""
+      genres: "",
+      loading: true
     };
     this.handleChange = this.handleChange.bind(this);
     this.getRecommendations = this.getRecommendations.bind(this);
@@ -67,8 +68,16 @@ class App extends Component {
   }
 
   render() {
-    const genreOptions = this.state.genres ? (
-      this.state.genres.map((genre, i) => (
+    const {
+      selectedGenre,
+      popularityValue,
+      loading,
+      recommendations,
+      genres
+    } = this.state;
+
+    const genreOptions = genres ? (
+      genres.map((genre, i) => (
         <option key={i} value={genre}>
           {genre}
         </option>
@@ -88,12 +97,12 @@ class App extends Component {
             <p>Step 1: Select a genre</p>
             <DropDown
               onChange={e => this.handleChange(e, "genre")}
-              value={this.state.selectedGenre}
+              value={selectedGenre}
             >
               {genreOptions}
             </DropDown>
           </div>
-          <div style={{ textAlign: "center" }}>
+          <div>
             <p>Step 2: Select the popularity</p>
             <SliderInput
               type="range"
@@ -101,14 +110,14 @@ class App extends Component {
               max={99}
               step={1}
               onChange={e => this.handleChange(e, "popularity")}
-              value={this.state.popularityValue}
+              value={popularityValue}
             />
-            <span>{this.state.popularityValue}</span>
+            <span>{popularityValue}</span>
           </div>
         </InputsContainer>
         <RecommendationPreview
-          loading={this.state.loading}
-          recommendations={this.state.recommendations}
+          loading={loading}
+          recommendations={recommendations}
         />
         <Disclaimer>*Some genres have a popularity cap*</Disclaimer>
       </LandingContainer>
