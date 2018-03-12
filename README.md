@@ -27,7 +27,7 @@ Spotify based on the genre and popularity score that Spotify assigns each song.
   npm run demo or yarn demo  
   ```
 * Your browser window should open up to localhost:3001 and you should now be
-  able to find, preview, and open songs in spotify so that you can properly
+  able to find, preview, and open songs in Spotify so that you can properly
   annoy your coworkers :smiling_imp:
 
 ### Pull requests, suggestions, and funny song suggestions are welcome.

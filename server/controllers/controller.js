@@ -33,7 +33,7 @@ const getGenres = (req, res) => {
     .then(genres => res.status(200).json(genres.data))
     .catch(err => {
       res.status(500).json("Could not get genres from Spotify");
-      console.log(err, req);
+      console.log(err);
     });
 };
 

@@ -1,22 +1,11 @@
 import React, { Component } from "react";
 import styled from "react-emotion";
 
+// Import React Components
 import Recommendation from "./Recommendation";
 
-const PreviewContainer = styled("div")`
-  height: 60vh;
-  width: 75%;
-  margin: 2vh 5%;
-  background-color: black;
-  overflow-y: scroll;
-`;
-
-const Greeting = styled("h3")`
-  font-weight: bold;
-  font-size: 5em;
-  margin: 15% 0;
-  text-align: center;
-`;
+// Import Styled-Components
+import { PreviewContainer, Greeting } from "../styles";
 
 export default class RecommendationPreview extends Component {
   constructor(props) {
@@ -57,10 +46,9 @@ export default class RecommendationPreview extends Component {
 
   componentWillReceiveProps(nextProps) {
     this.audioContainer.pause();
-    this.setState({ activeMusicIndex: 0, play: false }),
-      () => {
-        this.audioContainer.currentTime = 0;
-      };
+    this.setState({ activeMusicIndex: 0, play: false }, () => {
+      this.audioContainer.currentTime = 0;
+    });
   }
 
   render() {
@@ -85,8 +73,6 @@ export default class RecommendationPreview extends Component {
     const activeMusic =
       recommendations.length > 1 &&
       recommendations[this.state.activeMusicIndex];
-
-    console.log(activeMusic);
 
     return (
       <PreviewContainer>

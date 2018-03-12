@@ -3,51 +3,17 @@ import styled from "react-emotion";
 import axios from "axios";
 import { debounce } from "lodash";
 
+// Import React Components
 import RecommendationPreview from "./RecommendationPreview";
 
-const LandingContainer = styled("div")`
-  height: 100vh;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
-  font-family: "Open Sans", sans-serif;
-  background-color: #181818;
-  color: white;
-`;
-
-const Header = styled("h1")`
-  font-weight: bold;
-  font-size: 5em;
-  border-bottom: 5px solid #1db954;
-  margin: 1% 0;
-`;
-
-const SubHeader = styled("h2")`
-  font-size: 2em;
-  margin: 1% 0;
-  text-align: center;
-
-  @media (max-width: 900px) {
-    font-size: 1.5em;
-  }
-`;
-
-const InputsContainer = styled("div")`
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  width: 80%;
-
-  @media (max-width: 500px) {
-    flex-direction: column;
-  }
-`;
-
-const Disclaimer = styled("span")`
-  font-size: 0.75em;
-`;
+// Import Styled-Components
+import {
+  LandingContainer,
+  Header,
+  SubHeader,
+  InputsContainer,
+  Disclaimer
+} from "../styles";
 
 class App extends Component {
   constructor(props) {
@@ -86,17 +52,17 @@ class App extends Component {
 
   getRecommendations() {
     const { selectedGenre, popularityValue } = this.state;
-    this.setState({ loading: true }, () => {
-      axios
-        .get(`/api/recommendations/${selectedGenre}/${popularityValue}`)
-        .then(recommendations => {
-          this.setState({
-            recommendations: recommendations.data.tracks,
-            loading: false
-          });
-        })
-        .catch(console.log);
-    });
+    this.setState({ loading: true });
+
+    axios
+      .get(`/api/recommendations/${selectedGenre}/${popularityValue}`)
+      .then(recommendations => {
+        this.setState({
+          recommendations: recommendations.data.tracks,
+          loading: false
+        });
+      })
+      .catch(console.log);
   }
 
   render() {
