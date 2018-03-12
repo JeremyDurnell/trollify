@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import PropTypes from "prop-types";
 
 // Import React Components
 import Recommendation from "./Recommendation";
@@ -85,3 +86,8 @@ export default class RecommendationPreview extends Component {
     );
   }
 }
+
+RecommendationPreview.propTypes = {
+  recommendations: PropTypes.arrayOf(PropTypes.object).isRequired,
+  loading: PropTypes.bool
+};

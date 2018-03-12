@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 // Import Styled-Components
 import {
@@ -61,3 +62,11 @@ const Recommendation = ({
 );
 
 export default Recommendation;
+
+Recommendation.propTypes = {
+  recommendation: PropTypes.object.isRequired,
+  index: PropTypes.number.isRequired,
+  handleSelect: PropTypes.func.isRequired,
+  playing: PropTypes.bool.isRequired,
+  previewAvailable: PropTypes.string
+};
