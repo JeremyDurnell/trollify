@@ -27,6 +27,8 @@ axios(authOptions)
   })
   .catch(console.log);
 
+// Controller Methods
+
 const getGenres = (req, res) => {
   axios
     .get(`https://api.spotify.com/v1/recommendations/available-genre-seeds`)
