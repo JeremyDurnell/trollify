@@ -24,7 +24,9 @@ Spotify based on the genre and popularity score that Spotify assigns each song.
   ```
 * Run the demo script
   ```
-  npm run demo or yarn demo  
+  npm run demo or yarn demo  (if on Mac or Linux)
+    or
+  npm run demo-windows or yarn demo-windows (if on Windows)  
   ```
 * Your browser window should open up to localhost:3001 and you should now be
   able to find, preview, and open songs in Spotify so that you can properly
