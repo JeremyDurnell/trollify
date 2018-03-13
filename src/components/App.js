@@ -27,7 +27,8 @@ class App extends Component {
       genres: "",
       loading: true
     };
-    this.handleChange = this.handleChange.bind(this);
+    this.handleGenres = this.handleGenres.bind(this);
+    this.handlePopularity = this.handlePopularity.bind(this);
     this.getRecommendations = this.getRecommendations.bind(this);
     this.debouncedGetRecs = debounce(this.getRecommendations, 1000);
   }
@@ -39,21 +40,27 @@ class App extends Component {
       .catch(console.log);
   }
 
-  handleChange(event, source) {
-    if (source === "genre") {
-      this.setState({ selectedGenre: event.target.value }, () =>
-        this.getRecommendations()
-      );
-    } else if (source === "popularity") {
-      this.setState(
-        { popularityValue: event.target.value },
-        this.debouncedGetRecs()
-      );
-    }
+  handleGenres(event) {
+    this.setState(
+      { selectedGenre: event.target.value },
+      this.getRecommendations(
+        this.state.selectedGenre,
+        this.state.popularityValue
+      )
+    );
   }
 
-  getRecommendations() {
-    const { selectedGenre, popularityValue } = this.state;
+  handlePopularity(event) {
+    this.setState(
+      { popularityValue: event.target.value },
+      this.debouncedGetRecs(
+        this.state.selectedGenre,
+        this.state.popularityValue
+      )
+    );
+  }
+
+  getRecommendations(selectedGenre, popularityValue) {
     this.setState({ loading: true });
 
     axios
@@ -96,7 +103,7 @@ class App extends Component {
           <div>
             <p>Step 1: Select a genre</p>
             <DropDown
-              onChange={e => this.handleChange(e, "genre")}
+              onChange={e => this.handleGenres(e)}
               value={selectedGenre}
             >
               {genreOptions}
@@ -109,7 +116,7 @@ class App extends Component {
               min={1}
               max={99}
               step={1}
-              onChange={e => this.handleChange(e, "popularity")}
+              onChange={e => this.handlePopularity(e)}
               value={popularityValue}
             />
             <span>{popularityValue}</span>
