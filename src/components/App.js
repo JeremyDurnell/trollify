@@ -41,8 +41,7 @@ class App extends Component {
   }
 
   handleGenres(event) {
-    this.setState(
-      { selectedGenre: event.target.value },
+    this.setState({ selectedGenre: event.target.value }, () =>
       this.getRecommendations(
         this.state.selectedGenre,
         this.state.popularityValue
@@ -51,8 +50,7 @@ class App extends Component {
   }
 
   handlePopularity(event) {
-    this.setState(
-      { popularityValue: event.target.value },
+    this.setState({ popularityValue: event.target.value }, () =>
       this.debouncedGetRecs(
         this.state.selectedGenre,
         this.state.popularityValue

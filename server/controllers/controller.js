@@ -14,7 +14,8 @@ const authOptions = {
     "Content-Type": "application/x-www-form-urlencoded"
   },
   params: {
-    grant_type: "client_credentials"
+    // prettier-ignore
+    "grant_type": "client_credentials"
   }
 };
 
